@@ -54,13 +54,14 @@ def main():
         		print (TAB_2 + "flags:")
         		print (TAB_3 + "URG:{},ACK:{},PSH:{},RST:{},SYN:{},FIN{}".format(flag[0],flag[1],flag[2],flag[3],flag[4],flag[5]))
         		print (TAB_2 + "Data:")
-        		print ("data aa rha h?")
         		print (format_multi_line(DATA_TAB_3,data))
 
         	elif proto == 17:
         		src_port,dest_port,length,data = udp_segment(data)
         		print (TAB_1 + 'UDP segment:')
         		print (TAB_2 + 'Source Port:{},Destination port:{},length:{}'.format(src_port,dest_port,length))
+        		print (format_multi_line(DATA_TAB_3,data))
+
         	else:
         		print (TAB_1,'Data:')
         		print (format_multi_line(DATA_TAB_2,data))
